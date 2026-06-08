@@ -1,8 +1,8 @@
-# Landing Pages Profissionais | Tawhin Chiang
+# Tawhin Chiang | Landing Pages Profissionais
 
-Landing page estática para apresentar o serviço de criação de landing pages profissionais para prestadores de serviço, empresas, consultores, clínicas, escritórios, negócios locais e atendimento online.
+Landing page estatica para apresentar o servico de criacao de landing pages profissionais do Tawhin Chiang.
 
-O projeto foi feito com HTML, CSS e JavaScript puro, sem dependências de build. A proposta é ter uma página leve, responsiva e fácil de publicar.
+O site foi criado com HTML, CSS e JavaScript puro, sem framework e sem etapa de build.
 
 ## Estrutura
 
@@ -13,32 +13,33 @@ O projeto foi feito com HTML, CSS e JavaScript puro, sem dependências de build.
 |   +-- professional-landing-hero.png
 +-- index.html
 +-- script.js
-+-- styles.css
++-- style.css
 +-- README.md
 +-- .gitignore
 ```
 
-## Personalização principal
+## Secoes principais
 
-Antes de publicar, revise estes pontos:
+- Hero com chamada comercial e mockup visual.
+- Servicos e beneficios da criacao de landing pages.
+- Projetos publicados de clientes.
+- Processo de trabalho.
+- Portfolio, GitHub, Instagram, LinkedIn e WhatsApp.
+- CTA final para pedir orcamento.
 
-- Número de WhatsApp em `script.js`, na chave `whatsappNumber`.
-- Mensagem inicial de WhatsApp em `script.js`, na chave `whatsappMessage`.
-- Textos comerciais em `index.html`, caso queira focar em um nicho específico.
-- Imagem principal em `assets/professional-landing-hero.png`, caso queira usar uma foto própria.
-- Título e descrição da página dentro da tag `<head>` em `index.html`.
+## Contatos configurados
 
-O número do WhatsApp deve estar no formato internacional, apenas com números. Exemplo para Brasil:
-
-```js
-whatsappNumber: "5511999999999"
-```
+- WhatsApp: `55 63 99201-4547`
+- Instagram: `https://www.instagram.com/yochiang.tawhin/`
+- LinkedIn: `https://www.linkedin.com/in/tawhinchiang`
+- Portfolio: `https://tawhinchiang.github.io/Portfolio-Dev-/`
+- GitHub: `https://github.com/tawhinchiang`
 
 ## Rodando localmente
 
-Como o site é estático, você pode abrir o arquivo `index.html` diretamente no navegador.
+Como o projeto e estatico, voce pode abrir o arquivo `index.html` direto no navegador.
 
-A forma mais fiel ao ambiente de hospedagem é servir a pasta localmente:
+Para servir localmente:
 
 ```bash
 python -m http.server 5173 --bind 127.0.0.1
@@ -50,65 +51,8 @@ Depois acesse:
 http://127.0.0.1:5173/
 ```
 
-Se a porta `5173` estiver ocupada, use outra:
+## Publicacao
 
-```bash
-python -m http.server 8080 --bind 127.0.0.1
-```
+Pode ser publicado em Vercel, Netlify, GitHub Pages ou qualquer hospedagem para site estatico.
 
-## Inicializando o repositório
-
-```bash
-git init
-git add .
-git commit -m "Initial landing page"
-```
-
-Depois, crie um repositório remoto no GitHub e conecte:
-
-```bash
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-git push -u origin main
-```
-
-## Hospedagem recomendada
-
-Para produção, uma opção eficaz para este projeto é a Netlify:
-
-- Funciona muito bem com sites estáticos.
-- Permite conectar o repositório GitHub.
-- Publica automaticamente a cada `git push`.
-- Facilita domínio próprio e HTTPS.
-- Não exige comando de build para este projeto.
-
-Configuração sugerida na Netlify:
-
-```text
-Build command: deixe vazio
-Publish directory: .
-```
-
-Fluxo:
-
-1. Suba o projeto para um repositório no GitHub.
-2. Na Netlify, escolha a opção de importar projeto a partir de um repositório.
-3. Selecione o repositório.
-4. Deixe o comando de build vazio.
-5. Use `.` como pasta de publicação.
-6. Publique o site.
-7. Configure um domínio próprio quando estiver pronto.
-
-Alternativa simples para preview: GitHub Pages. Para este projeto, publique a partir da branch `main` e da pasta raiz do repositório.
-
-Referências oficiais:
-
-- Netlify: https://docs.netlify.com/start/quickstarts/deploy-from-repository/
-- GitHub Pages: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
-
-## Observações
-
-- O site não usa backend.
-- Os botões de contato usam link direto do WhatsApp.
-- O arquivo `assets/professional-landing-hero.png` é o hero principal atual.
-- Arquivos temporários de captura e perfis locais de navegador estão ignorados no `.gitignore`.
+Nao ha comando de build. Use a pasta raiz do projeto como diretorio de publicacao.
