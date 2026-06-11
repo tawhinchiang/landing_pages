@@ -10,6 +10,9 @@ O site foi criado com HTML, CSS e JavaScript puro, sem framework e sem etapa de 
 .
 +-- assets/
 |   +-- legal-landing-hero.png
+|   +-- preview-comdiodo.png
+|   +-- preview-monica-advocacia.png
+|   +-- preview-panificadora.png
 |   +-- professional-landing-hero.png
 +-- index.html
 +-- script.js

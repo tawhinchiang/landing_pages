@@ -384,6 +384,7 @@ h3 {
   font-size: clamp(3.1rem, 7vw, 6.7rem);
   font-weight: 800;
   line-height: 0.94;
+  overflow-wrap: anywhere;
 }
 
 .hero h1::after {
@@ -407,47 +408,6 @@ h3 {
   margin-top: 28px;
 }
 
-.hero-form {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px;
-  width: min(100%, 640px);
-  margin: 26px auto 0;
-  padding: 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius);
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
-}
-
-.hero-form input {
-  width: 100%;
-  min-width: 0;
-  min-height: 48px;
-  padding: 0 14px;
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid transparent;
-  border-radius: var(--radius);
-  outline: 0;
-}
-
-.hero-form input::placeholder {
-  color: #77778c;
-}
-
-.hero-form input:focus {
-  border-color: var(--border-strong);
-}
-
-.hero-form button {
-  white-space: nowrap;
-}
-
-.hero-form.is-success {
-  border-color: rgba(34, 197, 94, 0.44);
-}
-
 .hero__trust {
   margin: 14px 0 0;
   color: var(--muted-2);
@@ -457,106 +417,30 @@ h3 {
 
 .hero__visual {
   position: relative;
-  max-width: 890px;
-  min-height: 520px;
-  margin: 62px auto 0;
-}
-
-.floating-card {
-  position: absolute;
-  z-index: 4;
   display: grid;
-  gap: 7px;
-  width: 190px;
-  padding: 16px;
-  color: var(--text);
-  background: rgba(18, 18, 26, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-dark);
-  backdrop-filter: blur(14px);
-  animation: float-y 5.6s ease-in-out infinite;
-}
-
-.floating-card strong {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-.floating-card span {
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.45;
-}
-
-.floating-card button {
-  width: max-content;
-  min-height: 32px;
-  padding: 0 12px;
-  color: var(--text);
-  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-  border: 0;
-  border-radius: var(--radius);
-  font-size: 0.76rem;
-  font-weight: 800;
-}
-
-.floating-card i {
-  width: 10px;
-  height: 10px;
-  background: var(--green);
-  border-radius: 50%;
-  box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.12);
-}
-
-.floating-card--copy {
-  top: 8px;
-  left: -12px;
-  transform: rotate(-7deg);
-}
-
-.floating-card--conversion {
-  left: 36px;
-  bottom: 46px;
-  transform: rotate(-5deg);
-  animation-delay: -1.6s;
-}
-
-.floating-card--published {
-  top: 26px;
-  right: -8px;
-  transform: rotate(6deg);
-  animation-delay: -2.4s;
-}
-
-.floating-card--whatsapp {
-  right: 36px;
-  bottom: 68px;
-  transform: rotate(-7deg);
-  animation-delay: -3.2s;
+  width: min(100%, 760px);
+  max-width: 760px;
+  margin: 62px auto 0;
+  place-items: center;
 }
 
 .editor-mockup {
-  position: absolute;
-  left: 50%;
-  top: 54px;
-  width: min(100%, 590px);
+  position: relative;
+  width: 100%;
+  min-width: 0;
   overflow: hidden;
   background: rgba(12, 12, 18, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
   box-shadow: var(--shadow-purple), var(--shadow-dark);
-  transform: translateX(-50%);
 }
 
 .editor-topbar {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 14px;
   align-items: center;
+  min-width: 0;
   padding: 12px;
   background: rgba(255, 255, 255, 0.04);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -586,17 +470,23 @@ h3 {
 }
 
 .editor-topbar > span {
+  min-width: 0;
+  overflow: hidden;
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .editor-actions {
   display: inline-flex;
   gap: 8px;
+  min-width: 0;
 }
 
 .editor-actions button {
+  min-width: 0;
   min-height: 32px;
   padding: 0 12px;
   color: var(--text);
@@ -614,7 +504,7 @@ h3 {
 
 .editor-body {
   display: grid;
-  grid-template-columns: 116px 1fr;
+  grid-template-columns: minmax(112px, 0.26fr) minmax(0, 1fr);
   gap: 0;
   min-height: 360px;
 }
@@ -656,12 +546,13 @@ h3 {
 .landing-preview {
   display: grid;
   gap: 14px;
+  min-width: 0;
   padding: 14px;
 }
 
 .preview-hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   overflow: hidden;
   min-height: 214px;
   background: linear-gradient(135deg, #111827, #17112b);
@@ -673,6 +564,7 @@ h3 {
   display: grid;
   align-content: center;
   gap: 10px;
+  min-width: 0;
   padding: 20px;
 }
 
@@ -687,6 +579,7 @@ h3 {
   max-width: 230px;
   font-size: 1.25rem;
   line-height: 1.08;
+  overflow-wrap: anywhere;
 }
 
 .preview-copy p {
@@ -698,6 +591,7 @@ h3 {
 
 .preview-copy button {
   width: max-content;
+  max-width: 100%;
   min-height: 34px;
   padding: 0 12px;
   color: var(--text);
@@ -706,6 +600,7 @@ h3 {
   border-radius: var(--radius);
   font-size: 0.72rem;
   font-weight: 800;
+  white-space: normal;
 }
 
 .preview-hero img {
@@ -722,8 +617,7 @@ h3 {
   gap: 10px;
 }
 
-.preview-metrics span,
-.ai-panel {
+.preview-metrics span {
   padding: 11px;
   color: var(--muted);
   background: rgba(255, 255, 255, 0.05);
@@ -732,29 +626,6 @@ h3 {
   font-size: 0.75rem;
   font-weight: 800;
   text-align: center;
-}
-
-.ai-panel {
-  grid-column: 2;
-  display: grid;
-  gap: 4px;
-  margin: 0 14px 14px;
-  padding: 14px;
-  text-align: left;
-  border-color: rgba(139, 92, 246, 0.36);
-}
-
-.ai-panel strong {
-  color: var(--text);
-  font-size: 0.86rem;
-}
-
-.ai-panel span {
-  overflow: hidden;
-  color: var(--muted);
-  font-size: 0.78rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .hero-stats {
@@ -884,6 +755,10 @@ h3 {
 
 .client-projects-grid {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.client-projects-grid.client-projects-grid--single {
+  grid-template-columns: minmax(0, 420px);
 }
 
 .steps-grid,
@@ -1027,6 +902,7 @@ h3 {
 
 .project-preview {
   position: relative;
+  aspect-ratio: 16 / 10;
   min-height: 190px;
   overflow: hidden;
   background:
@@ -1073,6 +949,30 @@ h3 {
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 900;
+}
+
+.project-preview--screenshot {
+  background: #0f1018;
+}
+
+.project-preview--screenshot::before,
+.project-preview--screenshot::after {
+  display: none;
+}
+
+.project-preview--screenshot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 260ms var(--ease), filter 260ms ease;
+}
+
+.project-card:hover .project-preview--screenshot img {
+  filter: saturate(1.08);
+  transform: scale(1.035);
 }
 
 .project-preview--law {
@@ -1420,17 +1320,6 @@ h3 {
   transform: translateY(0);
 }
 
-@keyframes float-y {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-
-  50% {
-    translate: 0 -12px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1444,11 +1333,7 @@ h3 {
 
 @media (max-width: 1100px) {
   .hero__visual {
-    max-width: 760px;
-  }
-
-  .floating-card {
-    width: 170px;
+    max-width: 720px;
   }
 
   .client-projects-grid {
@@ -1548,23 +1433,7 @@ h3 {
   .hero__visual {
     display: grid;
     min-height: auto;
-    gap: 12px;
-  }
-
-  .editor-mockup,
-  .floating-card {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    transform: none;
-  }
-
-  .editor-mockup {
-    order: -1;
-  }
-
-  .floating-card {
-    animation: none;
+    margin-top: 46px;
   }
 
   .resources-grid,
@@ -1595,22 +1464,20 @@ h3 {
     font-size: 0.98rem;
   }
 
-  .hero-form {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-form button,
   .hero__actions .btn,
   .final-cta__actions .btn {
     width: 100%;
   }
 
   .editor-topbar {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
   }
 
   .editor-actions {
     grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
   }
 
   .editor-actions button {
@@ -1619,17 +1486,11 @@ h3 {
 
   .editor-body {
     grid-template-columns: 1fr;
+    min-height: 0;
   }
 
   .editor-sidebar {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .editor-sidebar span {
-    grid-column: 1 / -1;
+    display: none;
   }
 
   .preview-hero,
@@ -1667,7 +1528,8 @@ h3 {
   }
 
   .hero h1 {
-    font-size: clamp(2.35rem, 14vw, 3.2rem);
+    font-size: 2.55rem;
+    line-height: 1.05;
   }
 
   .resource-card,

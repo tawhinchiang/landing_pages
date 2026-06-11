@@ -1,8 +1,6 @@
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
-const generatorForm = document.querySelector("[data-generator-form]");
-const aiOutput = document.querySelector("[data-ai-output]");
 
 const WHATSAPP_NUMBER = "5563992014547";
 const DEFAULT_WHATSAPP_MESSAGE =
@@ -65,37 +63,3 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
-
-generatorForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const input = generatorForm.querySelector("input");
-  const button = generatorForm.querySelector("button");
-  const businessName = input?.value.trim() || "seu projeto";
-
-  button.disabled = true;
-  button.textContent = "Gerando...";
-
-  window.setTimeout(() => {
-    if (aiOutput) {
-      aiOutput.textContent = `Brief iniciado para ${businessName}. Abrindo conversa no WhatsApp.`;
-    }
-
-    button.textContent = "Abrindo WhatsApp...";
-    generatorForm.classList.add("is-success");
-
-    window.open(
-      buildWhatsappUrl(
-        `Ol\u00e1, Tawhin! Quero uma landing page para ${businessName}. Pode me passar um or\u00e7amento?`
-      ),
-      "_blank",
-      "noopener"
-    );
-
-    window.setTimeout(() => {
-      button.disabled = false;
-      button.textContent = "Receber proposta";
-      generatorForm.classList.remove("is-success");
-    }, 2200);
-  }, 700);
-});
