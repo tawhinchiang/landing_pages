@@ -754,7 +754,7 @@ h3 {
 }
 
 .client-projects-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .client-projects-grid.client-projects-grid--single {
